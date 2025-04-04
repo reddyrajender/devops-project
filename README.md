@@ -96,3 +96,97 @@ sudo user -
 root user   - 
 sso enabled normally for us
 if we required all access we need to use sudo we will 
+awk -F '{print $1}'
+************************2nd Day************************
+kill the process
+Zombi process  -
+child/often process  
+##############
+top - cpu, memory, running process 
+free - ram, swap space 
+free -h   for human readble
+swap- disk space (for OOM issues)
+df - disk free  (shows disk space usage for all mounted file system)
+df -h - for human readble
+du - to know the disk usage
+@system and resource monitring purpose we use commands
+uptime - shows system uptime
+mount - shows mounted file system
+**************network ************
+http == port 80
+https = port 443
+ssh = port 22
+total ports in system  0 -65535
+ip 
+port
+domain
+how to check port 
+#netstat -lntp  - show the information about listing ports
+ifconfig
+********user mgt******
+root user
+sudo user  == all access
+ec2-user to sudo user == su -
+useradd (username)
+id username ( to know user created)
+group access 
+create, delete, modify  group
+passwd username ( to set the pass word)
+userinfo is available on  - /etc/passwd
+groupadd (groupname)
+getent group (to know the group names)
+gerent passwd (
+to know user info)
+group typs 
+primnary
+secodary 
+ usermode -g groupname username
+ usermode -aG groupname username  to add
+userdel username - todelete
+userdel groupname -
+1 users 2 groups 3 otherusers
+chmod <permissions> <filename>
+r w x
+chmod u+x <filename>
+R - 4, W - 2, X - 1
+E.g. chmod 750 passwd
+ugoc
+chmod 720 filename
+
+*****package mgt**************
+linux - dnf (yum)
+ubuntu - apt
+rhel linux - entirprice edition -- dnf
+ex : dnf install pkg name -y
+dnt install git -y
+dnf list all  - to know list of pkg
+dnf list installed - installed pag list 
+
+*******service mgt***********
+systemctl start service name
+systemctl status service name
+systemctl enable service name
+systemctl stop service name
+#netstat -lntp  - show the information about listing ports
+
+telnet ipadress port  -- shows the conectivity of two servers
+telnet google.com port80 
+
+chown change ownership
+chown group/file/user
+chown rajender file.txt
+
+chown rajender:rajednergroup file.txt
+chown :rajendergroup file.txt
+mkdir /project
+chown devopsuser:devteam /project
+chmod 770 /project 
+
+
+
+
+
+
+
+
+
