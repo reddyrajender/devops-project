@@ -1,1 +1,106 @@
 Linux
+
+
+### **Linux Admin Essentials - Interview & Reference Guide**
+
+#### **Linux Architecture Overview**
+- **Kernel**: Core of Linux – manages processes, memory, devices  
+- **Shell**: Interface to interact with the kernel (bash, zsh)  
+- **Utilities**: Command-line tools (ls, cd, grep, awk, etc.)  
+- **Filesystem**: Hierarchical layout – /, /bin, /home, /etc  
+
+#### **Boot Process (Startup)**
+- **BIOS**: Hardware check and boot sequence  
+- **GRUB**: Loads Linux kernel  
+- **Init/Systemd**: Starts system processes and services  
+
+#### **Filesystem Basics**
+- `/` - Root directory  
+- `/home` - User directories  
+- `/etc` - Config files  
+- `/var` - Logs, spools  
+- `/bin`, `/usr/bin` - System/user commands  
+
+#### **Basic Commands**
+- `ls`, `ls -l`: List files  
+- `pwd`: Show current directory  
+- `cd /path`: Change directory  
+- `touch file`: Create empty file  
+- `mkdir dir`: Create directory  
+- `rm`, `rm -r`: Delete files  
+- `cp`, `mv`: Copy, move or rename files  
+
+#### **Process Management**
+- `ps -ef`: View all processes  
+- `top`: Live monitoring  
+- `kill <PID>`: Stop a process  
+- `kill -9 <PID>`: Force kill  
+- **Zombie Process**: Dead but uncollected child process  
+- **Child Process**: Spawned by a parent process  
+
+#### **System Monitoring**
+- `free -h`: Show memory usage  
+- `df -h`: Disk usage  
+- `du -sh dir`: Directory size  
+- `uptime`: System uptime  
+- `mount`: Mounted filesystems  
+
+#### **Networking Basics**
+- `ip a`, `ifconfig`: Show IP addresses  
+- `netstat -lntp`: Listening ports  
+- `telnet <host> <port>`: Test port connection  
+- **Common Ports**: HTTP=80, HTTPS=443, SSH=22  
+
+#### **User Management**
+- `useradd <user>`: Create user  
+- `userdel <user>`: Delete user  
+- `usermod -aG group user`: Add to group  
+- `groupadd`, `groupdel`: Manage groups  
+- `/etc/passwd`: User info  
+- `id <user>`: View UID, GID, groups  
+
+#### **Permissions & Ownership**
+- Read (r)=4, Write (w)=2, Execute (x)=1  
+- `chmod 750 file`: Set permissions  
+- `chown user file`: Change owner  
+- `chown user:group file`: Owner + group  
+
+#### **Package Management**
+- Ubuntu/Debian: `apt`  
+- RHEL/CentOS: `yum`, `dnf`  
+- `dnf install git -y`: Install Git  
+- `apt update && apt upgrade`: Update packages  
+
+#### **Service Management (systemd)**
+- `systemctl start nginx`: Start service  
+- `systemctl stop nginx`: Stop service  
+- `systemctl enable nginx`: Enable on boot  
+- `systemctl status nginx`: Status check  
+
+#### **Text Processing: awk, grep, sed**
+- `awk -F ':' '{print $1}' /etc/passwd`: Print 1st field  
+- `grep root /etc/passwd`: Find 'root'  
+- `sed -i 's|old|new|g' file`: Replace text  
+- `sed '1d' file`: Delete 1st line  
+
+#### **Compression Tools**
+- `tar -xf file.tar.gz`: Extract  
+- `zip file.zip file`: Compress  
+- `unzip file.zip`: Decompress  
+
+#### **Handy Tips**
+- `!!`: Repeat last command  
+- `history | grep ssh`: Search history  
+- `alias ll='ls -la'`: Create alias  
+
+#### **Practical Example**
+```bash
+mkdir /project
+chown devopsuser:devteam /project
+chmod 770 /project
+# => Owner and group full access, others none
+```
+
+---
+
+Would you like this as a downloadable `.txt`, `.md`, or `.docx` file while PDF is unavailable?
