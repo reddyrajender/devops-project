@@ -73,4 +73,221 @@ then
 else
     echo "you are from earth"
 fi
+***************Operators**************************
+Equal ==> -eq/==
+Greaterthanequalo ==> -ge
+Lessthanorequailo ==> -le
+Not Equal ==> -ne/!=
+Greaterthan ==> -gt
+Less than ==> -lt
+************Check If File/Dir exist***************************8
+if[ -d folder_name] if folder exist
+[ ! -d folder_name] if folder not exists
+if [ -f file_name] if file exist
+if [! - file_name] if file not exists
+************SWITCH**************************
+echo "hey choose an option"
+echo "a = To see the current date"
+echo "b = list all the files in current dir"
+
+read choice
+
+case $choice in 
+    a) date;;
+    b) ls;;
+    *) echo " Non a valid Input"
+esac
+ write in a file ex: ./switch_demo.sh
+
+*****************FOR LOOP************
+
+for i 1 2 3 4 5 
+do
+        echo "Number is $1"
+done
+other ways to write for loop
+for j in Raju Sham Baburao
+for p in {1..20}
+
+
+*******ITERATE VALUES FROM FILE..************
+items="/home/raj
+file.txt"
+
+for item in $(cat $items)
+do
+    echo $item
+done
+********** WHILE LOOP *******************
+count-0
+num=10
+
+while [$count -le$num ]
+do
+    echo "Numbers are $count"
+    let count++
+done
+
+*************UNTIL LOOP*********************
+a=10
+
+until [ $a -eq 1]
+do
+    echo $a
+    a='expr $a - 1'
+done
+
+************ INFINITE LOOP ******************
+while true
+do
+    echo "Hi'
+    sleep 2s
+done
+
+******************* USEFUL CONCEPTS...**********
+BREAK - TO STOP THE LOOP
+
+CONTINUE - TO STOP CURRENT ITERATION OF LOOP AND START NEXT ITERATION
+
+$cat break-continu_demo.sh
+ #!/bin/bash
+
+for i in 1 2 3 
+do 
+        wcho $i
+continue
+echo "Remaining Steps"
+done
+
+while true
+do 
+        echo "breaking while loop now .."
+break
+done 
+
+********************    HOW TO USE EXPRESSIONS ******************
+
+using let command
+
+Example:
+
+let a++
+let a=5*10
+----
+ex:
+cat expr_demo.sh
+#!/bin/bash
+
+a=10
+#if we want to perform some mtch on the variable 'a'
+let a++
+let a=a+20
+echo $a 
+$./expr_demo.sh
+31
+
+**********************PRINT NAME OF THE SCRIPT **************************
+ECHO " the name of the script is: ${0}"
+
+cat script_name.sh
+#!/bin/bash
+
+echo " The name of this script is ${0}"
+$ ./script_name.sh
+the name of this script is ./script_name.sh
+
+
+*************** WHAT ARE FUCTIONS? ****************
+> Block of the code which perform some task and run when it is called.
+>Can be reuse many times in our program which lessen our lines of code.
+> we can pass arguments to the method
+
+fuction myfun {
+    echo "Hi"
+}
+
+myfun() {
+    echo "hello"
+}
+------------
+
+To call the function 
+myfun
+
+$ cat fuction_demo.sh
+#!/bin/bash
+
+fuction myfun {
+    echo "Hi, this is myfun"
+}
+
+myfun1() {
+    echo "hello, this is myfun1"
+}
+
+***********************How to use argments in functions?******************
+
+addition() {
+    local num1=$1
+    local num2=$2
+    let "sum of $num1 and $num@ is $sum"
+}
+************* Arguments in script **************
+
+#myscript.sh arg1 arg2..
+How to access these arguments inside our script?
+To get no. of arguments  : $#
+To display all arguments :$@
+To use or display a argument : $1 $2 ..
+
+---
+ex:
+$ ./args_demo.sh raju sham
+kindly provide 2 arguments
+
+No. of arguments passed - 2
+all the arguments are - raju sham
+
+first argument is raju
+second argument is sham
+**********************BASH VARIABLES**************************
+RANDOM -A RANDOM INTEGER between 0 and 32767 is generated
+
+UID - User ID of the user logged in 
+
+echi $RANDOM
+echo $uid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
