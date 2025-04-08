@@ -1,0 +1,76 @@
+What is LINUX SHELL?
+A shell provide an environment to a user to excute commands and interact with kernel.
+what is my shell type?
+you can check using echo $0
+what is shell scriptiong ?
+==> shell script consist of set of commands to perform a task.
+==> all the commands execute sequentially.
+==> some task like file manipulation, program execution, user interaction, automation of can be done.
+what is  SHEBANG?
+#!/bin/bash
+sending output to terminal?
+echo "hello world"
+how to run a script?
+==> make sure script has execute permission rwx
+==> run using 
+    ./script.sh
+    /path/script.sh
+    sh script.sh
+ctrl+c to terminate
+ctrl+z to stop
+check the permission 
+ls -l basic.sh
+ex: -rwxrw-r--
+*****Comments*******
+using #
+#This is a comment
+Multi-line comment
+<<comment
+...
+your comment here
+...
+comment
+*************what are variables?****************
+VAR_NAME=value
+VAR_NAME=$(hostname)
+echo $VAR_NAME
+*******CONSTANT VARIABLE************
+Once you defined a variable and don't wanna change it until end of the script.
+readonly var_name="Hi"
+ex: $car var_readonly.sh
+#!/bin/bash
+readonly country="India"
+echo "I love $country"
+country="us"
+$./var_readonly.sh
+i love india
+./var_readonly.sh" line8 : country: readonly variable
+***************Taking input from user**********
+read <var_name>
+read -p "your name" NAME
+$./user_input.sh
+what is your name/
+paul
+what is your age 28
+Name is paul and age is 28
+*******Conditional statement***************
+*****************If-ELSe************
+if [$age -eq 18 ]
+then
+    echo "you are eligible to vote"
+else
+    echo "sorry you are not eligible to vote"
+fi
+ex: 
+
+*****************ELIF************************
+if [ $country = "India"
+then 
+    echo "you are indian"
+elif [$country = "Nepal" ]
+then
+    echo "you are from Nepal"
+else
+    echo "you are from earth"
+fi
+
